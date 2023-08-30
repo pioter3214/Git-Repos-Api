@@ -1,3 +1,65 @@
+#EN
+# GitHub Repository Information Retrieval App
+
+## Description
+
+This application is written in Java using the Spring Boot framework. Its purpose is to retrieve information about GitHub repositories of a specific user, including their branches. The results are returned in JSON format.
+
+## Requirements
+
+- Java 17 (or compatible version)
+- Maven
+- Internet access (for communicating with the GitHub API)
+
+## Usage Instructions
+
+1. Clone the repository to your local machine.
+2. Open the project in your preferred code editor.
+3. In the `application.properties` file, set the value of `server.port` to the desired port number where you want to run the application.
+
+## Configuration
+
+No special configuration is required; the application works with default settings.
+
+## Running
+
+1. Open a terminal or command prompt.
+2. Navigate to the main project directory.
+3. Enter the command `mvn spring-boot:run` to start the application.
+4. The application will be accessible at `http://localhost:port`, where `port` is the port number defined in `application.properties`.
+
+## Endpoints
+
+### Retrieving information about repositories of a specific user
+
+- Endpoint: `/username`
+- Method: GET
+- Parameter: `username` (GitHub username)
+- Example request: `http://localhost:port/username`
+- Example response:
+  ```json
+  [
+    {
+      "name": "repository_name",
+      "login": "user_name",
+      "branches": [
+        {
+          "name": "branch_name",
+          "sha": "commit_sha"
+        },
+        // additional branches
+      ]
+    },
+    // additional repositories
+  ]
+## Notes
+Aplikacja wykorzystuje REST API GitHuba do pobierania informacji o repozytoriach i gałęziach. Może istnieć limit zapytań API, więc zaleca się ostrożność przy wykonywaniu wielu zapytań w krótkim czasie.
+
+## Author
+Autor: Piotr Michalak
+Konta
+
+#PL
 # Aplikacja do Pobierania Informacji o Repozytoriach GitHub
 
 ## Opis
